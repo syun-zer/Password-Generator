@@ -40,4 +40,15 @@
   });
 
   showPassword();
+  // 独自の機能としてコピー機能を追加
+  document.getElementById('copy').addEventListener('click', async () => {
+  const text = document.getElementById('result').textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    alert('コピーしました！');
+  } catch (err) {
+    alert('コピーに失敗しました');
+  }
+});
+// ここまで
 }
